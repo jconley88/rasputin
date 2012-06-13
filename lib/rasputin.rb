@@ -21,6 +21,7 @@ module Rasputin
 
     initializer :setup_rasputin, :group => :all do |app|
       app.assets.register_preprocessor 'application/javascript', Rasputin::RequirePreprocessor
+      app.assets.register_engine 'raw.handlebars', Rasputin::HandlebarsTemplate
       app.assets.register_engine '.handlebars', Rasputin::HandlebarsTemplate
       app.assets.register_engine '.hbs', Rasputin::HandlebarsTemplate
     end
